@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import LearnSwiftRAC
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let vc = MainViewController.init()
+        addChildViewController(vc)
+        view.addSubview(vc.view)
+        vc.view.frame = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.size.width, height: 500)
+        vc.view.backgroundColor = UIColor.gray
     }
 
     override func didReceiveMemoryWarning() {
